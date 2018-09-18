@@ -1,0 +1,29 @@
+---
+
+- hosts: localhost
+  tasks:
+    - name: Install packages (as root)
+      block:
+        - name: Install packages
+          apt:
+            name: '{{ item }}'
+          with_items:
+            - i3
+            - zsh
+            - htop
+            - strace
+            - lsof
+            - mpv
+            - keepassxc
+            - powertop
+            - mosh
+            - scrot
+            - nmap
+            - acpi
+            - pwgen
+            - feh
+            - weechat
+            - gparted
+            - yamllint
+      become: true
+
